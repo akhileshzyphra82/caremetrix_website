@@ -58,7 +58,10 @@ function App() {
     <div>
       <header className="hero">
         <nav className="nav container">
-          <div className="logo">CAREMETRIX</div>
+          <div className="logo" aria-label="CareMetrix">
+            <span className="logo-mark" aria-hidden="true" />
+            <span className="logo-text">CareMetrix</span>
+          </div>
           <div className="menu">
             <a href="#services">Services</a>
             <a href="#process">Process</a>

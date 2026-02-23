@@ -1,7 +1,7 @@
 :root {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #12324d;
-  background: #f7fcfc;
+  color: #1b2042;
+  background: #f8f9ff;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -13,7 +13,7 @@
 body {
   margin: 0;
   min-width: 320px;
-  background: linear-gradient(180deg, #eff9fa 0%, #f7fcfc 35%, #ffffff 100%);
+  background: linear-gradient(180deg, #f6f6ff 0%, #fbf8ff 35%, #ffffff 100%);
 }
 
 a {
@@ -27,9 +27,37 @@ a {
 }
 
 .hero {
-  background: radial-gradient(circle at 20% 10%, #42c2bf 0%, #11a9b4 40%, #0f3d67 100%);
+  position: relative;
+  isolation: isolate;
   color: #fff;
-  padding-bottom: 5rem;
+  padding-bottom: 5.5rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(115deg, rgba(49, 26, 110, 0.88), rgba(22, 61, 137, 0.73)),
+    url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: heroZoom 18s ease-in-out infinite alternate;
+  z-index: -2;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: -20% -10%;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(247, 122, 202, 0.55), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(154, 106, 255, 0.5), transparent 42%),
+    radial-gradient(circle at 50% 90%, rgba(64, 202, 255, 0.28), transparent 50%);
+  filter: blur(8px);
+  animation: floatGlow 11s ease-in-out infinite;
+  z-index: -1;
 }
 
 .nav {
@@ -40,9 +68,28 @@ a {
 }
 
 .logo {
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.logo-mark {
+  width: 2.05rem;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: conic-gradient(from 120deg, #ffb347, #f77aca, #6478ff, #ffb347);
+  box-shadow: 0 8px 20px rgba(247, 122, 202, 0.3);
+}
+
+.logo-text {
+  font-size: 1.52rem;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  background: linear-gradient(95deg, #f77aca 2%, #af80e0 43%, #6478ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .menu {
@@ -50,6 +97,7 @@ a {
   align-items: center;
   gap: 1.25rem;
   font-weight: 600;
+  color: rgba(245, 247, 255, 0.94);
 }
 
 .hero-content {
@@ -62,11 +110,11 @@ a {
   letter-spacing: 0.15em;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #28a8b0;
+  color: #725cf2;
 }
 
 .hero .eyebrow {
-  color: #9ce8e6;
+  color: #fbc0f0;
 }
 
 h1,
@@ -85,7 +133,7 @@ h1 {
 .lead {
   font-size: 1.1rem;
   max-width: 760px;
-  color: #d8f5f7;
+  color: #e8e8ff;
 }
 
 .cta-group {
@@ -106,14 +154,16 @@ h1 {
 }
 
 .btn-primary {
-  background: #1dd9cd;
-  color: #09334c;
+  background: linear-gradient(94deg, #f77aca, #9981ff);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(179, 115, 244, 0.45);
 }
 
 .btn-secondary,
 .btn-outline {
   border-color: rgba(255, 255, 255, 0.45);
   color: #fff;
+  backdrop-filter: blur(4px);
 }
 
 .trust {
@@ -122,7 +172,7 @@ h1 {
 }
 
 .trust p {
-  color: #4c7086;
+  color: #5f6389;
   margin-bottom: 1rem;
 }
 
@@ -133,12 +183,12 @@ h1 {
 }
 
 .trust-grid span {
-  border: 1px solid #d2e6ec;
-  background: #fff;
+  border: 1px solid #dfdff9;
+  background: linear-gradient(180deg, #ffffff 0%, #faf9ff 100%);
   border-radius: 10px;
   padding: 0.85rem;
   font-weight: 600;
-  color: #1e5574;
+  color: #475187;
 }
 
 .section {
@@ -146,12 +196,12 @@ h1 {
 }
 
 .section-alt {
-  background: #ebf7f9;
+  background: linear-gradient(180deg, #f5f2ff 0%, #f9f8ff 100%);
 }
 
 h2 {
   font-size: clamp(1.55rem, 3.6vw, 2.5rem);
-  color: #10324f;
+  color: #252f65;
   margin-bottom: 2rem;
   max-width: 760px;
 }
@@ -167,14 +217,15 @@ h2 {
 .card,
 .stat,
 .testimonial {
-  background: #fff;
-  border: 1px solid #d2e8ee;
+  background: linear-gradient(155deg, #ffffff 0%, #f8f5ff 100%);
+  border: 1px solid #e4defe;
   border-radius: 18px;
   padding: 1.4rem;
+  box-shadow: 0 12px 30px rgba(40, 43, 94, 0.06);
 }
 
 .card h3 {
-  color: #0f4768;
+  color: #3d3b85;
 }
 
 .process-list {
@@ -182,14 +233,14 @@ h2 {
   padding-left: 1.2rem;
   display: grid;
   gap: 1rem;
-  color: #164767;
+  color: #40437b;
   font-weight: 500;
 }
 
 .stat strong {
   display: block;
   font-size: 2rem;
-  color: #0fa7a5;
+  color: #8354ea;
   margin-bottom: 0.4rem;
 }
 
@@ -198,7 +249,7 @@ h2 {
 }
 
 .testimonial span {
-  color: #4d6f84;
+  color: #62679a;
   font-size: 0.93rem;
 }
 
@@ -209,12 +260,12 @@ h2 {
 .cta-section p {
   max-width: 700px;
   margin: 0 auto 1.5rem;
-  color: #4b7188;
+  color: #636695;
 }
 
 .footer {
   padding: 1.25rem 0;
-  border-top: 1px solid #d3e7ed;
+  border-top: 1px solid #e2dff7;
   background: #fff;
 }
 
@@ -223,7 +274,26 @@ h2 {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
-  color: #4f6f84;
+  color: #686c95;
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1.04) translateY(0);
+  }
+  100% {
+    transform: scale(1.12) translateY(-1.8%);
+  }
+}
+
+@keyframes floatGlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 1.5%, 0);
+  }
 }
 
 @media (max-width: 720px) {
