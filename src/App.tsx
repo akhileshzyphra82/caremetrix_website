@@ -1,174 +1,199 @@
-const services = [
+const painPoints = [
+  'High subscription costs',
+  'Duplicate data entry',
+  'Increased admin hours',
+  'Compliance risks',
+  'Fragmented communication',
+];
+
+const solutions = [
   {
-    title: 'Revenue Growth Systems',
-    description:
-      'Build high-converting funnels, automate lead nurturing, and turn first-time inquiries into long-term patients.',
+    title: 'NDIS CRM & Participant Management',
+    items: [
+      'Participant onboarding',
+      'Care plan development',
+      'Goal tracking',
+      'Service agreements',
+      'Incident reporting',
+      'Document management',
+      'Automated reminders',
+      'Compliance tracking',
+    ],
   },
   {
-    title: 'Brand & Web Experience',
-    description:
-      'Create an authoritative healthcare brand with a fast, SEO-ready website and conversion-focused content.',
+    title: 'Workforce & Staffing Management',
+    items: [
+      'Staff onboarding and credential tracking',
+      'Roster management and shift allocation',
+      'Time and attendance tracking',
+      'Compliance alerts and performance monitoring',
+      'Payroll integration support',
+    ],
   },
   {
-    title: 'Operational Automation',
-    description:
-      'Reduce administrative overhead through CRM integrations, scheduling automations, and dashboarding.',
+    title: 'Compliance & Quality Assurance',
+    items: [
+      'Automated compliance checks',
+      'Incident and risk management',
+      'Audit-ready reporting',
+      'Policy and procedure management',
+      'Real-time alerts and quality improvement tracking',
+    ],
+  },
+  {
+    title: 'Automation & Reporting',
+    items: [
+      'Automated billing support',
+      'Service verification tracking',
+      'Real-time operational dashboards',
+      'Custom reporting tools',
+      'Financial performance insights',
+    ],
   },
 ];
 
-const processSteps = [
-  'Discover your current patient journey, messaging, and infrastructure.',
-  'Design a growth blueprint aligned to service lines and market opportunities.',
-  'Deploy website, campaigns, and automation systems in coordinated sprints.',
-  'Optimize continuously using data from attribution, engagement, and retention.',
-];
-
-const caseStudies = [
-  {
-    metric: '187%',
-    label: 'Increase in qualified leads for multi-location clinic network',
-  },
-  {
-    metric: '63%',
-    label: 'Reduction in manual front-desk follow-up tasks',
-  },
-  {
-    metric: '3.2x',
-    label: 'Return on ad spend after funnel and landing page overhaul',
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      'Caremetrix gave us the strategy and systems we were missing. Every part of the patient journey feels more connected now.',
-    name: 'Dr. Ananya Mehta',
-    role: 'Medical Director, VitalCare Clinics',
-  },
-  {
-    quote:
-      'From branding to campaign execution, their team felt like an extension of ours. We saw measurable growth within one quarter.',
-    name: 'Rahul Khanna',
-    role: 'COO, NovaWell Hospitals',
-  },
+const benefits = [
+  'Reduce administrative hours',
+  'Lower overall software subscription costs',
+  'Improve compliance and audit readiness',
+  'Enhance participant care quality',
+  'Improve staff accountability',
+  'Increase operational efficiency',
+  'Streamline communication across teams',
 ];
 
 function App() {
   return (
-    <div>
-      <header className="hero">
-        <nav className="nav container">
-          <div className="logo" aria-label="CareMetrix">
-            <span className="logo-mark" aria-hidden="true" />
-            <span className="logo-text">CareMetrix</span>
-          </div>
-          <div className="menu">
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#results">Results</a>
-            <a href="#contact" className="btn btn-outline">
-              Book Strategy Call
+    <div className="page-shell">
+      <header className="hero" id="top">
+        <div className="container">
+          <nav className="nav">
+            <a href="#top" className="brand" aria-label="CareMetrix home">
+              <span className="brand-mark" aria-hidden="true">
+                <span />
+              </span>
+              <span>CareMetrix</span>
             </a>
-          </div>
-        </nav>
+            <div className="nav-links">
+              <a href="#solutions">Solutions</a>
+              <a href="#benefits">Benefits</a>
+              <a href="#mission">Mission</a>
+              <a href="#contact" className="btn btn-outline">
+                Book Consultation
+              </a>
+            </div>
+          </nav>
 
-        <div className="hero-content container">
-          <p className="eyebrow">Healthcare Growth Partner</p>
-          <h1>Scale healthcare brands with strategy, systems, and digital precision.</h1>
-          <p className="lead">
-            Inspired by modern performance-agency structures, Caremetrix helps healthcare businesses capture demand,
-            improve patient experiences, and build compounding revenue channels.
-          </p>
-          <div className="cta-group">
-            <a href="#contact" className="btn btn-primary">
-              Get Free Audit
-            </a>
-            <a href="#results" className="btn btn-secondary">
-              View Success Stories
-            </a>
+          <div className="hero-grid">
+            <div>
+              <p className="eyebrow">Purpose-built for NDIS providers</p>
+              <h1>The complete CRM and workforce management software for NDIS organisations.</h1>
+              <p className="lead">
+                CareMetrix unifies participant management, staffing, compliance, reporting, and quality assurance into one
+                powerful platform so your team can spend more time on care and less on admin.
+              </p>
+              <div className="cta-row">
+                <a className="btn btn-primary" href="#contact">
+                  Get Started
+                </a>
+                <a className="btn btn-ghost" href="#solutions">
+                  Explore Solutions
+                </a>
+              </div>
+            </div>
+
+            <aside className="hero-card">
+              <h2>Why providers switch to CareMetrix</h2>
+              <p>Replace disconnected software with one login and total control.</p>
+              <ul>
+                {painPoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </aside>
           </div>
         </div>
       </header>
 
-      <section className="trust container">
-        <p>Trusted by growth-focused clinics, hospitals, and specialty care providers.</p>
-        <div className="trust-grid">
-          <span>PrimeCare Group</span>
-          <span>MediBridge</span>
-          <span>Axis Heart Center</span>
-          <span>UrbanWell</span>
-          <span>LifeSpring Labs</span>
-        </div>
-      </section>
-
-      <section id="services" className="section container">
-        <p className="eyebrow">Services</p>
-        <h2>Everything your healthcare brand needs to grow, under one roof.</h2>
-        <div className="cards">
-          {services.map((service) => (
-            <article className="card" key={service.title}>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="process" className="section section-alt">
-        <div className="container">
-          <p className="eyebrow">How We Work</p>
-          <h2>A clear framework built for execution and measurable outcomes.</h2>
-          <ol className="process-list">
-            {processSteps.map((step) => (
-              <li key={step}>{step}</li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section id="results" className="section container">
-        <p className="eyebrow">Impact</p>
-        <h2>Results designed to move real business metrics.</h2>
-        <div className="stats">
-          {caseStudies.map((item) => (
-            <article className="stat" key={item.label}>
-              <strong>{item.metric}</strong>
-              <p>{item.label}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section-alt">
-        <div className="container">
-          <p className="eyebrow">Client Voices</p>
-          <h2>Partnerships built on trust, speed, and transparency.</h2>
-          <div className="testimonials">
-            {testimonials.map((testimonial) => (
-              <article className="testimonial" key={testimonial.name}>
-                <p>“{testimonial.quote}”</p>
-                <h3>{testimonial.name}</h3>
-                <span>{testimonial.role}</span>
-              </article>
-            ))}
+      <main>
+        <section className="section section-light" id="solutions">
+          <div className="container">
+            <p className="eyebrow">Our Core Solutions</p>
+            <h2>Everything your NDIS organisation needs in one platform.</h2>
+            <div className="solution-grid">
+              {solutions.map((solution) => (
+                <article className="solution-card" key={solution.title}>
+                  <h3>{solution.title}</h3>
+                  <ul>
+                    {solution.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="contact" className="section container cta-section">
-        <h2>Ready to accelerate your healthcare growth engine?</h2>
-        <p>
-          Book a strategic consultation to get a custom growth roadmap for your practice, hospital, or healthcare brand.
-        </p>
-        <a href="mailto:hello@caremetrix.com" className="btn btn-primary">
-          hello@caremetrix.com
-        </a>
-      </section>
+        <section className="section section-gradient" id="benefits">
+          <div className="container two-col">
+            <div>
+              <p className="eyebrow">Custom-built for NDIS providers</p>
+              <h2>Scalable, secure, and tailored to your workflows.</h2>
+              <p>
+                CareMetrix is not generic software adapted for disability services. It is built exclusively for NDIS
+                organisations with customisable workflows, tailored reporting, and secure cloud-based access.
+              </p>
+              <p>
+                Whether you are a small provider or a multi-location organisation, our platform adapts as you grow
+                without adding complexity.
+              </p>
+            </div>
+            <div className="benefits-panel">
+              <h3>Benefits of CareMetrix</h3>
+              <ul>
+                {benefits.map((benefit) => (
+                  <li key={benefit}>{benefit}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-light" id="mission">
+          <div className="container mission">
+            <p className="eyebrow">Our Mission</p>
+            <h2>Empowering providers with technology that improves care outcomes.</h2>
+            <p>
+              We help NDIS providers improve operational efficiency while maintaining the highest standards of
+              participant care. Our mission is simple: help your team spend more time supporting people, and less time
+              managing paperwork.
+            </p>
+          </div>
+        </section>
+
+        <section className="section cta" id="contact">
+          <div className="container cta-content">
+            <h2>Ready to transform your organisation?</h2>
+            <p>
+              Book a free consultation and discover how CareMetrix can reduce admin workload, improve compliance, and
+              elevate care quality.
+            </p>
+            <div className="contact-list">
+              <a href="mailto:support@caremetrix.com.au">support@caremetrix.com.au</a>
+              <a href="tel:+61000000000">+61 (0) 0000 0000</a>
+              <a href="https://www.caremetrix.com.au" target="_blank" rel="noreferrer">
+                www.caremetrix.com.au
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <footer className="footer">
         <div className="container footer-wrap">
-          <span>© {new Date().getFullYear()} Caremetrix. All rights reserved.</span>
-          <span>Built with React + TypeScript + Vite.</span>
+          <span>© {new Date().getFullYear()} CareMetrix. All rights reserved.</span>
+          <span>One platform. One login. Total control.</span>
         </div>
       </footer>
     </div>
