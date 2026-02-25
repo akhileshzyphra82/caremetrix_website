@@ -1,252 +1,190 @@
-const services = [
+const heroHighlights = [
+  { icon: '🧑‍🤝‍🧑', title: 'Participant-first workflows', text: 'Keep goals, support plans, notes, and outcomes in one connected record.' },
+  { icon: '🛡️', title: 'Audit-ready compliance', text: 'Track incidents, documents, and quality actions with complete visibility.' },
+  { icon: '⚡', title: 'Automation that saves hours', text: 'Reduce manual admin using reminders, alerts, and smarter reporting.' },
+];
+
+const solutions = [
   {
-    title: 'Revenue Growth Systems',
-    description:
-      'Build high-converting funnels, automate lead nurturing, and turn first-time inquiries into long-term patients.',
+    icon: '📋',
+    title: 'Participant CRM & Case Management',
+    items: ['Intake and onboarding', 'Goal and outcome tracking', 'Service agreements', 'Progress notes and documents'],
   },
   {
-    title: 'Brand & Web Experience',
-    description:
-      'Create an authoritative healthcare brand with a fast, SEO-ready website and conversion-focused content.',
+    icon: '👩‍⚕️',
+    title: 'Workforce, Rosters & Timesheets',
+    items: ['Smart shift planning', 'Credential and expiry alerts', 'Staff availability and leave', 'Attendance and service verification'],
   },
   {
-    title: 'Operational Automation',
-    description:
-      'Reduce administrative overhead through CRM integrations, scheduling automations, and dashboarding.',
+    icon: '✅',
+    title: 'Compliance & Quality',
+    items: ['Incident and risk workflows', 'Policy register and acknowledgements', 'Audit evidence in one place', 'Continuous improvement tracking'],
+  },
+  {
+    icon: '📈',
+    title: 'Billing, Claims & Reporting',
+    items: ['NDIS-friendly billing support', 'Performance dashboards', 'Funding utilisation insights', 'Exportable management reports'],
   },
 ];
 
-
-
-const caseStudies = [
+const ndisSections = [
   {
-    metric: '187%',
-    label: 'Increase in qualified leads for multi-location clinic network',
+    title: 'Support Coordination Teams',
+    points: ['Track participant goals and plan milestones', 'Document interactions and referrals', 'Surface risks earlier with reminders'],
   },
   {
-    metric: '63%',
-    label: 'Reduction in manual front-desk follow-up tasks',
+    title: 'SIL / SDA Providers',
+    points: ['Manage daily care operations', 'Coordinate staff rosters by site', 'Capture incidents and quality actions quickly'],
   },
   {
-    metric: '3.2x',
-    label: 'Return on ad spend after funnel and landing page overhaul',
+    title: 'Allied Health & Community Services',
+    points: ['Plan sessions and clinician capacity', 'Store notes securely and consistently', 'Monitor outcomes across programs'],
   },
 ];
 
-const testimonials = [
-  {
-    quote:
-      'Caremetrix gave us the strategy and systems we were missing. Every part of the patient journey feels more connected now.',
-    name: 'Dr. Ananya Mehta',
-    role: 'Medical Director, VitalCare Clinics',
-  },
-  {
-    quote:
-      'From branding to campaign execution, their team felt like an extension of ours. We saw measurable growth within one quarter.',
-    name: 'Rahul Khanna',
-    role: 'COO, NovaWell Hospitals',
-  },
+const platformStats = [
+  { value: '35%', label: 'Less admin time' },
+  { value: '24/7', label: 'Secure cloud access' },
+  { value: '100%', label: 'Single source of truth' },
 ];
 
 function App() {
   return (
-    <div>
-      <nav className="nav">
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div className="logo" aria-label="CareMetrix">
+    <div className="page-shell">
+      <header className="site-header" id="top">
+        <div className="container nav-wrap">
+          <a href="#top" className="brand" aria-label="CareMetrix home">
             <img
               src="https://pub-c61fbd9fa813427186a41ed133f48034.r2.dev/asset/website-banner/bg-logo.png"
-              alt="CareMetrix Logo"
-              className="logo-img"
+              alt="CareMetrix logo"
+              className="brand-logo"
             />
-          </div>
-          <div className="menu">
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#results">Results</a>
-            <a href="#contact" className="btn btn-primary" style={{ padding: '0.6rem 1.2rem' }}>
-              Book Strategy Call
-            </a>
-          </div>
-        </div>
-      </nav>
+            <span>CareMetrix</span>
+          </a>
 
-      <header className="hero section">
-        <div className="container hero-grid">
-          <div className="hero-content">
-            <p className="eyebrow">Healthcare Growth Partner</p>
-            <h1>Scale healthcare brands with strategy and digital precision.</h1>
-            <p className="lead">
-              Caremetrix helps healthcare businesses capture demand, improve patient experiences, and build compounding revenue channels through data-driven performance systems.
-            </p>
-            <div className="cta-group">
-              <a href="#contact" className="btn btn-primary">
-                Get Free Audit
-              </a>
-              <a href="#results" className="btn btn-secondary">
-                View Success Stories
-              </a>
-            </div>
-          </div>
-          <div className="hero-mockup">
-            <img
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
-              alt="CareMetrix Platform Mockup"
-            />
-          </div>
+          <nav className="nav-links" aria-label="Main">
+            <a href="#solutions">Solutions</a>
+            <a href="#ndis">NDIS Sectors</a>
+            <a href="#why">Why CareMetrix</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <a className="btn btn-login" href="https://dev.caremetrix.com.au" target="_blank" rel="noreferrer">
+            Login
+          </a>
         </div>
       </header>
 
-      <section className="trust container" style={{ padding: '4rem 0', borderBottom: '1px solid var(--color-border)' }}>
-        <p style={{ textAlign: 'center', marginBottom: '2rem', fontWeight: 600, color: 'var(--color-text-muted)' }}>
-          TRUSTED BY LEADING HEALTHCARE PROVIDERS
-        </p>
-        <div className="trust-grid" style={{ opacity: 0.6, filter: 'grayscale(1)' }}>
-          <span>PrimeCare Group</span>
-          <span>MediBridge</span>
-          <span>Axis Heart Center</span>
-          <span>UrbanWell</span>
-          <span>LifeSpring Labs</span>
-        </div>
-      </section>
-
-      <section id="services" className="section container">
-        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem' }}>
-          <p className="eyebrow">Services</p>
-          <h2>Everything your healthcare brand needs to grow.</h2>
-        </div>
-        <div className="cards">
-          {services.map((service) => (
-            <article className="card" key={service.title}>
-              <div style={{ width: '48px', height: '48px', background: 'var(--color-primary)', borderRadius: '12px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M2 12h20" /></svg>
+      <main>
+        <section className="hero">
+          <div className="container hero-grid">
+            <div>
+              <p className="eyebrow">Purpose-built for NDIS providers</p>
+              <h1>Beautifully simple operations platform for high-quality disability support.</h1>
+              <p className="lead">
+                From participant onboarding to compliance, workforce, and reporting, CareMetrix brings every workflow
+                into one modern platform designed for NDIS growth.
+              </p>
+              <div className="cta-row">
+                <a className="btn btn-primary" href="#contact">
+                  Book a Demo
+                </a>
+                <a className="btn btn-soft" href="#solutions">
+                  Explore Platform
+                </a>
               </div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+              <div className="stats-row" id="why">
+                {platformStats.map((stat) => (
+                  <div key={stat.label} className="stat-card">
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-      <section className="section section-alt">
-        <div className="container">
-          <div className="walkthrough-grid">
-            <div className="walkthrough-content">
-              <p className="eyebrow">Operational Excellence</p>
-              <h2>Streamline your practice with smart automation.</h2>
-              <p className="lead">
-                Reduce administrative overhead through CRM integrations, automated scheduling, and real-time dashboarding. We build the systems that let you focus on what matters most: patient care.
-              </p>
-              <ul style={{ listStyle: 'none', marginTop: '2rem' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  <span>Automated Lead Nurturing</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  <span>Seamless CRM Integration</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                  <span>Real-time Performance Reporting</span>
-                </li>
-              </ul>
-            </div>
-            <div className="walkthrough-img">
-              <img src="https://images.unsplash.com/photo-1551288049-bbbda536ad34?auto=format&fit=crop&w=1200&q=80" alt="Dashboard Preview" />
-            </div>
+            <aside className="hero-panel">
+              <h2>Why teams are switching to CareMetrix</h2>
+              <div className="highlight-list">
+                {heroHighlights.map((item) => (
+                  <article key={item.title} className="highlight-item">
+                    <span className="icon" aria-hidden="true">
+                      {item.icon}
+                    </span>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.text}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </aside>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="walkthrough-grid reverse">
-            <div className="walkthrough-content">
-              <p className="eyebrow">Patient Experience</p>
-              <h2>Create a seamless journey for every patient.</h2>
-              <p className="lead">
-                Transform first-time inquiries into long-term patients with a fast, SEO-ready website and conversion-focused content designed specifically for the healthcare industry.
-              </p>
-              <a href="#contact" className="btn btn-secondary" style={{ marginTop: '2rem' }}>Learn More</a>
-            </div>
-            <div className="walkthrough-img">
-              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Patient Interaction" />
+        <section className="section section-light" id="solutions">
+          <div className="container">
+            <p className="eyebrow">Core platform modules</p>
+            <h2>Everything needed to run and scale your NDIS organisation.</h2>
+            <div className="solution-grid">
+              {solutions.map((solution) => (
+                <article className="solution-card" key={solution.title}>
+                  <h3>
+                    <span className="icon" aria-hidden="true">
+                      {solution.icon}
+                    </span>{' '}
+                    {solution.title}
+                  </h3>
+                  <ul>
+                    {solution.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="results" className="section container">
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <p className="eyebrow">Impact</p>
-          <h2>Numbers that drive real growth.</h2>
-        </div>
-        <div className="stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem' }}>
-          {caseStudies.map((item) => (
-            <article key={item.label} style={{ textAlign: 'center' }}>
-              <strong style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--color-primary)', display: 'block' }}>{item.metric}</strong>
-              <p style={{ fontWeight: 600, marginTop: '0.5rem' }}>{item.label}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section-alt">
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <p className="eyebrow">Client Voices</p>
-            <h2>Partnerships built on trust and results.</h2>
-          </div>
-          <div className="testimonials">
-            {testimonials.map((testimonial) => (
-              <article className="testimonial" key={testimonial.name}>
-                <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1.5rem', color: '#fbbf24' }}>
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-                  ))}
-                </div>
-                <p>“{testimonial.quote}”</p>
-                <h3>{testimonial.name}</h3>
-                <span>{testimonial.role}</span>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="section container">
-        <div style={{ background: 'var(--color-primary)', borderRadius: '2rem', padding: '6rem 2rem', textAlign: 'center', color: '#fff' }}>
-          <h2 style={{ color: '#fff', fontSize: '3rem', maxWidth: '800px', margin: '0 auto 1.5rem' }}>Ready to accelerate your healthcare growth engine?</h2>
-          <p style={{ fontSize: '1.25rem', opacity: 0.9, maxWidth: '600px', margin: '0 auto 3rem' }}>
-            Book a strategic consultation to get a custom growth roadmap for your practice, hospital, or healthcare brand.
-          </p>
-          <a href="mailto:hello@caremetrix.com" className="btn" style={{ background: '#fff', color: 'var(--color-primary)', fontSize: '1.1rem' }}>
-            Book Your Free Strategy Call
-          </a>
-        </div>
-      </section>
-
-      <footer className="footer section" style={{ padding: '4rem 0 2rem' }}>
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
-            <div className="logo">
-              <img
-                src="https://pub-c61fbd9fa813427186a41ed133f48034.r2.dev/asset/website-banner/bg-logo.png"
-                alt="CareMetrix Logo"
-                className="logo-img"
-              />
-            </div>
-            <div style={{ display: 'flex', gap: '2rem', fontWeight: 600 }}>
-              <a href="#services">Services</a>
-              <a href="#process">Process</a>
-              <a href="#results">Results</a>
+        <section className="section section-gradient" id="ndis">
+          <div className="container">
+            <p className="eyebrow">Built for real NDIS service models</p>
+            <h2>Flexible workflows for every team delivering participant outcomes.</h2>
+            <div className="ndis-grid">
+              {ndisSections.map((section) => (
+                <article key={section.title} className="ndis-card">
+                  <h3>{section.title}</h3>
+                  <ul>
+                    {section.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
             </div>
           </div>
-          <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--color-border)', display: 'flex', justifyContent: 'space-between', color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>
-            <span>© {new Date().getFullYear()} Caremetrix. All rights reserved.</span>
-            <span>Built with precision for healthcare.</span>
+        </section>
+
+        <section className="section cta" id="contact">
+          <div className="container cta-content">
+            <h2>Ready to build a stronger, smarter NDIS organisation?</h2>
+            <p>Talk to our team and see how CareMetrix can improve operations, compliance, and care quality.</p>
+            <div className="cta-row">
+              <a className="btn btn-primary" href="mailto:support@caremetrix.com.au">
+                Contact Sales
+              </a>
+              <a className="btn btn-soft" href="https://dev.caremetrix.com.au" target="_blank" rel="noreferrer">
+                Go to Login
+              </a>
+            </div>
           </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="container footer-wrap">
+          <span>© {new Date().getFullYear()} CareMetrix. All rights reserved.</span>
+          <span>One platform. Better outcomes. Stronger teams.</span>
         </div>
       </footer>
     </div>
