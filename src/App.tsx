@@ -1,65 +1,78 @@
-const heroHighlights = [
-  { icon: '🧭', title: 'Participant-first workflows' },
-  { icon: '🗂️', title: 'Audit-ready compliance' },
-  { icon: '⏱️', title: 'Automation that saves hours' },
+const navLinks = [
+  { label: 'Home', href: '#top' },
+  { label: 'Features', href: '#features' },
+  { label: 'Benefits', href: '#benefits' },
+  { label: 'Resources', href: '#resources' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'Contact', href: '#contact' },
 ];
 
-const solutions = [
+const reviews = [
   {
-    icon: '📋',
-    title: 'Participant CRM & Case Management',
-    items: ['Intake and onboarding', 'Goal and outcome tracking', 'Service agreements', 'Progress notes and documents'],
+    name: 'Jodie H.',
+    age: '8 months ago',
+    text: 'CareMetrix has been incredible to work with. Our team now stays on top of compliance and participant updates in one place.',
   },
   {
-    icon: '👩‍⚕️',
-    title: 'Workforce, Rosters & Timesheets',
-    items: ['Smart shift planning', 'Credential and expiry alerts', 'Staff availability and leave', 'Attendance and service verification'],
+    name: 'Beth W.',
+    age: '8 months ago',
+    text: 'Very easy to use and great for handling daily tasks. The dashboard gives us instant visibility across our programs.',
   },
   {
-    icon: '✅',
-    title: 'Compliance & Quality',
-    items: ['Incident and risk workflows', 'Policy register and acknowledgements', 'Audit evidence in one place', 'Continuous improvement tracking'],
+    name: 'Michelle A.',
+    age: '8 months ago',
+    text: 'Excellent experience from start to finish. The support team is responsive and our operations are more structured now.',
   },
   {
-    icon: '📈',
-    title: 'Billing, Claims & Reporting',
-    items: ['NDIS-friendly billing support', 'Performance dashboards', 'Funding utilisation insights', 'Exportable management reports'],
-  },
-];
-
-const ndisSections = [
-  {
-    title: 'Support Coordination Teams',
-    points: ['Track participant goals and plan milestones', 'Document interactions and referrals', 'Surface risks earlier with reminders'],
-  },
-  {
-    title: 'SIL / SDA Providers',
-    points: ['Manage daily care operations', 'Coordinate staff rosters by site', 'Capture incidents and quality actions quickly'],
-  },
-  {
-    title: 'Allied Health & Community Services',
-    points: ['Plan sessions and clinician capacity', 'Store notes securely and consistently', 'Monitor outcomes across programs'],
+    name: 'Kimberlee C.',
+    age: '9 months ago',
+    text: 'A game changer for participant and HR management. Everything is organised and available when we need it.',
   },
 ];
 
-const platformStats = [
-  { value: '35%', label: 'Less admin time' },
-  { value: '24/7', label: 'Secure cloud access' },
-  { value: '100%', label: 'Single source of truth' },
+const moduleTabs = [
+  'Dashboard',
+  'Rostering',
+  'Risk Management',
+  'HRM',
+  'Participants',
+  'Form Management',
+  'Document Management',
+  'Support Coordination',
+];
+
+const featureSections = [
+  {
+    id: 'features',
+    title: 'Sorted and Structured Dashboard',
+    description:
+      'CareMetrix keeps everything in one place so your team can track participants, workforce activity, and compliance instantly.',
+    image:
+      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'benefits',
+    title: 'Support Coordination',
+    description:
+      'Manage participant journeys, notes, incidents, and action plans with a single workflow that is simple for every staff member.',
+    image:
+      'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'resources',
+    title: 'Platinum Benefits',
+    description:
+      'Get practical tools for NDIS-ready operations, standardised processes, and complete visibility across your service delivery.',
+    bullets: ['Advice and standard employment workflows', 'Plan management guidance and reporting templates'],
+    image:
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+  },
 ];
 
 function App() {
-  const quickLinks = [
-    { label: 'Home', href: '#top' },
-    { label: 'Why CareMetrix', href: '#why' },
-    { label: 'Solutions', href: '#solutions' },
-    { label: 'NDIS Teams', href: '#ndis' },
-    { label: 'Contact', href: '#contact' },
-  ];
-
   return (
-    <div className="page-shell">
-      <header className="site-header" id="top">
+    <div className="page-shell" id="top">
+      <header className="site-header">
         <div className="container nav-wrap">
           <a href="#top" className="brand" aria-label="CareMetrix home">
             <img
@@ -68,114 +81,145 @@ function App() {
               className="brand-logo"
             />
           </a>
+
           <nav className="nav-links" aria-label="Primary navigation">
-            {quickLinks.map((link) => (
+            {navLinks.map((link) => (
               <a key={link.href} href={link.href}>
                 {link.label}
               </a>
             ))}
           </nav>
-          <a className="btn btn-login" href="https://dev.caremetrix.com.au" target="_blank" rel="noreferrer">
-            Login
-          </a>
+
+          <div className="nav-ctas">
+            <a className="btn btn-primary" href="#contact">
+              Book a Demo
+            </a>
+            <a className="btn btn-secondary" href="https://dev.caremetrix.com.au" target="_blank" rel="noreferrer">
+              Sign in
+            </a>
+          </div>
         </div>
       </header>
 
       <main>
         <section className="hero">
+          <div className="hero-surface" />
           <div className="container hero-grid">
-            <p className="eyebrow">Purpose-built for NDIS providers</p>
-            <h1 className="gradient-heading">Beautifully simple operations platform for high-quality disability support.</h1>
-
-            <div className="hero-highlight-line" aria-label="CareMetrix key strengths">
-              {heroHighlights.map((item) => (
-                <p key={item.title} className="hero-highlight-chip">
-                  <span className="hero-chip-icon" aria-hidden="true">
-                    {item.icon}
-                  </span>
-                  {item.title}
-                </p>
-              ))}
-            </div>
-
-            <p className="lead">
-              From participant onboarding to compliance, workforce, and reporting, CareMetrix brings every workflow
-              into one modern platform designed for NDIS growth.
-            </p>
-
-            <div className="cta-row">
-              <a className="btn btn-primary" href="#contact">
-                Book a Demo
-              </a>
-              <a className="btn btn-soft" href="#solutions">
-                Explore Platform
+            <div>
+              <h1>Grow Your NDIS Business with Confidence Through Smarter Solutions.</h1>
+              <p className="lead">
+                Run your NDIS business smoothly and confidently. Stay on top of compliance, track progress instantly, and
+                access support plans, risk assessments, and worker checks from anywhere.
+              </p>
+              <a className="btn btn-primary hero-btn" href="#contact">
+                7 Days Free Trial
               </a>
             </div>
-
-            <div className="stats-row" id="why">
-              {platformStats.map((stat) => (
-                <div key={stat.label} className="stat-card">
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
+            <div className="dashboard-shell" aria-label="CareMetrix dashboard preview">
+              <div className="dashboard-sidebar">
+                <p>CareMetrix</p>
+                <ul>
+                  <li>Dashboard</li>
+                  <li>Participants</li>
+                  <li>HRM</li>
+                  <li>Support Coordination</li>
+                </ul>
+              </div>
+              <div className="dashboard-main">
+                <div className="metric-row">
+                  <article>
+                    <strong>58</strong>
+                    <span>All Staff</span>
+                  </article>
+                  <article>
+                    <strong>6</strong>
+                    <span>Participants</span>
+                  </article>
+                  <article>
+                    <strong>4</strong>
+                    <span>Complaints</span>
+                  </article>
+                  <article className="incident-card">
+                    <strong>1</strong>
+                    <span>Incidents this week</span>
+                  </article>
                 </div>
+                <div className="table-grid">
+                  <article>
+                    <h3>Participants Compliance</h3>
+                    <p>Live progress by participant and required documents.</p>
+                  </article>
+                  <article>
+                    <h3>HRM Compliance</h3>
+                    <p>Staff checks, expiries, and reminders in one dashboard.</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="reviews">
+          <div className="container">
+            <h2>Customer Reviews</h2>
+            <div className="review-grid">
+              {reviews.map((review) => (
+                <article key={review.name} className="review-card">
+                  <h3>{review.name}</h3>
+                  <p className="review-age">{review.age}</p>
+                  <p>★★★★★</p>
+                  <p>{review.text}</p>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section section-light" id="solutions">
+        <section className="modules" id="pricing">
           <div className="container">
-            <p className="eyebrow">Core platform modules</p>
-            <h2>Everything needed to run and scale your NDIS organisation.</h2>
-            <div className="solution-grid">
-              {solutions.map((solution) => (
-                <article className="solution-card" key={solution.title}>
-                  <h3>
-                    <span className="icon" aria-hidden="true">
-                      {solution.icon}
-                    </span>{' '}
-                    {solution.title}
-                  </h3>
-                  <ul>
-                    {solution.items.map((item) => (
+            <h2>Smart Solutions For All Your NDIS Needs</h2>
+            <div className="module-grid">
+              {moduleTabs.map((tab, index) => (
+                <article key={tab} className={index === 0 ? 'module active' : 'module'}>
+                  {tab}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {featureSections.map((section, index) => (
+          <section key={section.id} className="feature" id={section.id}>
+            <div className={`container feature-grid ${index % 2 === 1 ? 'reverse' : ''}`}>
+              <div>
+                <h2>{section.title}</h2>
+                <p>{section.description}</p>
+                {section.bullets && (
+                  <ul className="feature-list">
+                    {section.bullets.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                </article>
-              ))}
+                )}
+                <a className="btn btn-primary" href="#contact">
+                  7 Day Free Trial
+                </a>
+              </div>
+              <img src={section.image} alt={section.title} />
             </div>
-          </div>
-        </section>
+          </section>
+        ))}
 
-        <section className="section section-gradient" id="ndis">
-          <div className="container">
-            <p className="eyebrow">Built for real NDIS service models</p>
-            <h2>Flexible workflows for every team delivering participant outcomes.</h2>
-            <div className="ndis-grid">
-              {ndisSections.map((section) => (
-                <article key={section.title} className="ndis-card">
-                  <h3>{section.title}</h3>
-                  <ul>
-                    {section.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section cta" id="contact">
-          <div className="container cta-content">
-            <h2>Ready to build a stronger, smarter NDIS organisation?</h2>
-            <p>Talk to our team and see how CareMetrix can improve operations, compliance, and care quality.</p>
-            <div className="cta-row">
-              <a className="btn btn-primary" href="mailto:support@caremetrix.com.au">
-                Contact Sales
+        <section className="app-strip" id="contact">
+          <div className="container app-strip-content">
+            <h2>Transform Your NDIS Worker Management</h2>
+            <p>Download the CareMetrix worker app from the App Store or Google Play.</p>
+            <div className="app-buttons">
+              <a className="btn btn-dark" href="#top">
+                Get on Play Store
               </a>
-              <a className="btn btn-soft" href="https://dev.caremetrix.com.au" target="_blank" rel="noreferrer">
-                Go to Login
+              <a className="btn btn-dark" href="#top">
+                Get on App Store
               </a>
             </div>
           </div>
@@ -183,43 +227,41 @@ function App() {
       </main>
 
       <footer className="footer">
-        <div className="container footer-top">
+        <div className="container footer-grid">
           <section>
             <h3>About CareMetrix</h3>
             <p>
-              CareMetrix helps NDIS organisations run participant, workforce, compliance, and reporting workflows in
-              one secure platform.
+              CareMetrix is an all-in-one platform for NDIS providers. From onboarding to compliance, rostering to CRM,
+              manage everything in one modern system.
             </p>
           </section>
-
           <section>
-            <h3>Quick Links</h3>
-            <ul className="footer-links">
-              {quickLinks.map((link) => (
-                <li key={`footer-${link.href}`}>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Invoicing</li>
+              <li>Rostering</li>
+              <li>NDIS Compliance</li>
+              <li>Risk Management</li>
             </ul>
           </section>
-
           <section>
-            <h3>Map & Contact Details</h3>
-            <iframe
-              title="CareMetrix location map"
-              className="footer-map"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Sydney%20NSW%20Australia&output=embed"
-            />
-            <p>Email: support@caremetrix.com.au</p>
-            <p>Phone: +61 2 9000 1234</p>
+            <h3>Resources</h3>
+            <ul>
+              <li>Video Gallery</li>
+              <li>Blogs</li>
+              <li>FAQs</li>
+              <li>Webinars</li>
+            </ul>
           </section>
         </div>
-
-        <div className="container footer-bottom">
-          <span />
-          <span>© {new Date().getFullYear()} CareMetrix. All rights reserved.</span>
+        <div className="footer-bottom">
+          <div className="container footer-line">
+            <span>© {new Date().getFullYear()} CareMetrix. All rights reserved.</span>
+            <div>
+              <a href="#top">Privacy Policy</a>
+              <a href="#top">Terms of Use</a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
