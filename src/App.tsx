@@ -1,7 +1,7 @@
 const heroHighlights = [
-  { icon: '🧑‍🤝‍🧑', title: 'Participant-first workflows', text: 'Keep goals, support plans, notes, and outcomes in one connected record.' },
-  { icon: '🛡️', title: 'Audit-ready compliance', text: 'Track incidents, documents, and quality actions with complete visibility.' },
-  { icon: '⚡', title: 'Automation that saves hours', text: 'Reduce manual admin using reminders, alerts, and smarter reporting.' },
+  { icon: '🧭', title: 'Participant-first workflows' },
+  { icon: '🗂️', title: 'Audit-ready compliance' },
+  { icon: '⏱️', title: 'Automation that saves hours' },
 ];
 
 const solutions = [
@@ -89,8 +89,10 @@ function App() {
 
             <div className="hero-highlight-line" aria-label="CareMetrix key strengths">
               {heroHighlights.map((item) => (
-                <p key={item.title}>
-                  <span aria-hidden="true">{item.icon}</span>
+                <p key={item.title} className="hero-highlight-chip">
+                  <span className="hero-chip-icon" aria-hidden="true">
+                    {item.icon}
+                  </span>
                   {item.title}
                 </p>
               ))}
