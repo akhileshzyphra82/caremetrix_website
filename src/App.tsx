@@ -209,12 +209,6 @@ function App() {
               CareMetrix is an all-in-one platform for NDIS providers. From onboarding to compliance, rostering to CRM,
               manage everything in one modern system.
             </p>
-            <p className="footer-about-copy">
-              About CareMetrix
-              <br />
-              CareMetrix is an all-in-one platform for NDIS providers. From onboarding to compliance, rostering to CRM,
-              manage everything in one modern system.
-            </p>
             <div className="social-links" aria-label="Social media links">
               <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -264,16 +258,13 @@ function App() {
                 18 Innovation Drive, Melbourne VIC
               </li>
             </ul>
-            <a
+            <iframe
               className="footer-map"
-              href="https://maps.google.com/?q=Melbourne%20VIC"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open CareMetrix location in Google Maps"
-            >
-              <span aria-hidden="true">🗺</span>
-              View on Map
-            </a>
+              title="CareMetrix office location map"
+              src="https://maps.google.com/maps?q=18%20Innovation%20Drive%2C%20Melbourne%20VIC&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </section>
         </div>
         <div className="footer-bottom">
