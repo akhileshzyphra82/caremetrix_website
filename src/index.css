@@ -2,9 +2,9 @@
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
   line-height: 1.5;
 
-  --gradient-primary: linear-gradient(236deg, #f062c0 0%, #8a6fe8 52%, #34245f 100%);
-  --gradient-vertical: linear-gradient(0deg, #f062c0 0%, #8a6fe8 55%, #34245f 100%);
-  --gradient-soft: linear-gradient(236deg, rgb(240 98 192 / 20%), rgb(138 111 232 / 16%), rgb(52 36 95 / 14%));
+  --gradient-primary: linear-gradient(56deg, #d16ec6 0%, #4e3494 45%, #34245f 100%);
+  --gradient-vertical: linear-gradient(180deg, #d16ec6 0%, #4e3494 45%, #34245f 100%);
+  --gradient-soft: linear-gradient(56deg, rgb(209 110 198 / 18%), rgb(78 52 148 / 14%), rgb(52 36 95 / 10%));
 
   --color-text-primary: #231a3f;
   --color-text-muted: #4f4a67;
@@ -132,7 +132,7 @@ a {
   position: absolute;
   inset: 0 auto 0 0;
   width: min(52%, 720px);
-  background: var(--gradient-soft);
+  background: transparent;
 }
 
 .hero-grid {
