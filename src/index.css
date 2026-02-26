@@ -65,10 +65,9 @@ p {
 }
 
 .brand-logo {
-  width: 4.1rem;
-  height: 4.1rem;
-  object-fit: contain;
-  border-radius: 0.8rem;
+  width: 12rem;
+  height: 3.1rem;
+ 
 }
 
 .nav-links {
@@ -182,7 +181,7 @@ h2 {
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 700;
-  padding: 0.72rem 1.2rem;
+  padding: 0.52rem 3rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
