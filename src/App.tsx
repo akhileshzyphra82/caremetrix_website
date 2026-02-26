@@ -117,7 +117,7 @@ function App() {
             </div>
             <figure className="dashboard-shell dashboard-preview" aria-label="CareMetrix dashboard preview">
               <img
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1800&q=80"
+                src="https://i.ibb.co/xqb4b71J/Screenshot-2026-02-26-122858.png"
                 alt="CareMetrix operations dashboard"
               />
             </figure>
