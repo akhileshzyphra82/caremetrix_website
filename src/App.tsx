@@ -106,14 +106,12 @@ function App() {
           <div className="hero-surface" />
           <div className="container hero-grid">
             <div>
-              <h1>Grow Your NDIS Business with Confidence Through Smarter Solutions.</h1>
+              <h1>The Complete CRM & Workforce Management Software for NDIS Providers</h1>
               <p className="lead">
                 Run your NDIS business smoothly and confidently. Stay on top of compliance, track progress instantly, and
                 access support plans, risk assessments, and worker checks from anywhere.
               </p>
-              <a className="btn btn-primary hero-btn" href="#contact">
-                7 Days Free Trial
-              </a>
+              <p className="hero-label">CareMetrix simplifies everything</p>
             </div>
             <figure className="dashboard-shell dashboard-preview" aria-label="CareMetrix dashboard preview">
               <img
@@ -123,6 +121,18 @@ function App() {
             </figure>
           </div>
         </section>
+
+        <a
+          className="floating-whatsapp"
+          href="https://wa.me/?text=Hi%20CareMetrix%2C%20I%20would%20like%20to%20know%20more."
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Chat with CareMetrix on WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19.05 4.94A9.86 9.86 0 0 0 12.02 2c-5.47 0-9.93 4.45-9.93 9.92 0 1.74.46 3.45 1.32 4.95L2 22l5.3-1.37a9.86 9.86 0 0 0 4.72 1.2h.01c5.47 0 9.93-4.45 9.93-9.93a9.82 9.82 0 0 0-2.9-6.96Zm-7.03 15.2h-.01a8.18 8.18 0 0 1-4.16-1.13l-.3-.18-3.14.8.84-3.06-.2-.31a8.2 8.2 0 0 1-1.26-4.34c0-4.52 3.68-8.2 8.22-8.2a8.13 8.13 0 0 1 5.82 2.42 8.15 8.15 0 0 1 2.4 5.8c0 4.53-3.69 8.2-8.22 8.2Zm4.5-6.15c-.25-.13-1.47-.72-1.7-.8-.23-.08-.39-.12-.55.13-.16.24-.63.8-.77.96-.14.16-.28.18-.53.06-.24-.13-1.03-.38-1.96-1.2a7.34 7.34 0 0 1-1.35-1.68c-.14-.25-.02-.39.1-.52.12-.12.25-.3.37-.45.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.13-.55-1.33-.75-1.83-.2-.47-.4-.4-.55-.4h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.11 3.64 2.41 1.04 2.41.7 2.84.66.43-.04 1.37-.56 1.56-1.1.2-.54.2-1 .14-1.1-.06-.1-.22-.16-.47-.29Z" />
+          </svg>
+        </a>
 
         <section className="reviews">
           <div className="container">
