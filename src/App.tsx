@@ -115,47 +115,12 @@ function App() {
                 7 Days Free Trial
               </a>
             </div>
-            <div className="dashboard-shell" aria-label="CareMetrix dashboard preview">
-              <div className="dashboard-sidebar">
-                <p>CareMetrix</p>
-                <ul>
-                  <li>Dashboard</li>
-                  <li>Participants</li>
-                  <li>HRM</li>
-                  <li>Support Coordination</li>
-                </ul>
-              </div>
-              <div className="dashboard-main">
-                <div className="metric-row">
-                  <article>
-                    <strong>58</strong>
-                    <span>All Staff</span>
-                  </article>
-                  <article>
-                    <strong>6</strong>
-                    <span>Participants</span>
-                  </article>
-                  <article>
-                    <strong>4</strong>
-                    <span>Complaints</span>
-                  </article>
-                  <article className="incident-card">
-                    <strong>1</strong>
-                    <span>Incidents this week</span>
-                  </article>
-                </div>
-                <div className="table-grid">
-                  <article>
-                    <h3>Participants Compliance</h3>
-                    <p>Live progress by participant and required documents.</p>
-                  </article>
-                  <article>
-                    <h3>HRM Compliance</h3>
-                    <p>Staff checks, expiries, and reminders in one dashboard.</p>
-                  </article>
-                </div>
-              </div>
-            </div>
+            <figure className="dashboard-shell dashboard-preview" aria-label="CareMetrix dashboard preview">
+              <img
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1800&q=80"
+                alt="CareMetrix operations dashboard"
+              />
+            </figure>
           </div>
         </section>
 
