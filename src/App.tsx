@@ -49,16 +49,34 @@ const platformStats = [
 ];
 
 function App() {
+  const quickLinks = [
+    { label: 'Home', href: '#top' },
+    { label: 'Why CareMetrix', href: '#why' },
+    { label: 'Solutions', href: '#solutions' },
+    { label: 'NDIS Teams', href: '#ndis' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
   return (
     <div className="page-shell">
       <header className="site-header" id="top">
-        <div className="container nav-wrap nav-logo-only">
+        <div className="container nav-wrap">
           <a href="#top" className="brand" aria-label="CareMetrix home">
             <img
               src="https://pub-c61fbd9fa813427186a41ed133f48034.r2.dev/asset/website-banner/bg-logo.png"
               alt="CareMetrix logo"
               className="brand-logo"
             />
+          </a>
+          <nav className="nav-links" aria-label="Primary navigation">
+            {quickLinks.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <a className="btn btn-login" href="https://dev.caremetrix.com.au" target="_blank" rel="noreferrer">
+            Login
           </a>
         </div>
       </header>
@@ -170,9 +188,43 @@ function App() {
       </main>
 
       <footer className="footer">
-        <div className="container footer-wrap">
+        <div className="container footer-top">
+          <section>
+            <h3>About CareMetrix</h3>
+            <p>
+              CareMetrix helps NDIS organisations run participant, workforce, compliance, and reporting workflows in
+              one secure platform.
+            </p>
+          </section>
+
+          <section>
+            <h3>Quick Links</h3>
+            <ul className="footer-links">
+              {quickLinks.map((link) => (
+                <li key={`footer-${link.href}`}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h3>Map & Contact Details</h3>
+            <iframe
+              title="CareMetrix location map"
+              className="footer-map"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Sydney%20NSW%20Australia&output=embed"
+            />
+            <p>Email: support@caremetrix.com.au</p>
+            <p>Phone: +61 2 9000 1234</p>
+          </section>
+        </div>
+
+        <div className="container footer-bottom">
+          <span />
           <span>© {new Date().getFullYear()} CareMetrix. All rights reserved.</span>
-          <span>One platform. Better outcomes. Stronger teams.</span>
         </div>
       </footer>
     </div>
