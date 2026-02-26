@@ -424,12 +424,6 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-.footer-about-copy {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-}
-
 .social-links {
   margin-top: 1rem;
   display: flex;
@@ -476,15 +470,13 @@ h2 {
 
 .footer-map {
   margin-top: 0.8rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.5rem 0.95rem;
+  width: min(100%, 220px);
+  height: 130px;
+  border: 0;
   border: 1px solid var(--color-border-soft);
-  border-radius: 999px;
+  border-radius: 12px;
   background: var(--color-bg-surface);
-  color: var(--color-accent-strong);
-  font-weight: 600;
+  box-shadow: 0 8px 16px rgb(19 26 42 / 10%);
 }
 
 .footer-bottom {
