@@ -106,7 +106,7 @@ function App() {
           <div className="hero-surface" />
           <div className="container hero-grid">
             <div>
-              <h1>The Complete CRM & Workforce Management Software for NDIS Providers</h1>
+              <h1 className="hero-title">The Complete CRM & Workforce Management Software for NDIS Providers</h1>
               <p className="lead">
                 Run your NDIS business smoothly and confidently. Stay on top of compliance, track progress instantly, and
                 access support plans, risk assessments, and worker checks from anywhere.
@@ -209,6 +209,29 @@ function App() {
               CareMetrix is an all-in-one platform for NDIS providers. From onboarding to compliance, rostering to CRM,
               manage everything in one modern system.
             </p>
+            <p className="footer-about-copy">
+              About CareMetrix
+              <br />
+              CareMetrix is an all-in-one platform for NDIS providers. From onboarding to compliance, rostering to CRM,
+              manage everything in one modern system.
+            </p>
+            <div className="social-links" aria-label="Social media links">
+              <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13.5 8.5V6.7c0-.76.5-.94.85-.94h2.1V2.5l-2.9-.01C10.5 2.49 9 4.4 9 7.2v1.3H6.5V12H9v9.5h4.5V12h2.9l.4-3.5h-3.3Z" />
+                </svg>
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm-.2 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm10.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6.2 8.7H2.8V21h3.4V8.7ZM4.5 3A2 2 0 1 0 4.6 7 2 2 0 0 0 4.5 3Zm16.7 10.6c0-3.2-1.7-5.3-4.8-5.3-2.2 0-3.2 1.2-3.8 2v-1.7H9.2V21h3.4v-6.1c0-1.6.3-3.2 2.3-3.2 2 0 2 1.9 2 3.3V21H21v-7.4Z" />
+                </svg>
+              </a>
+            </div>
           </section>
           <section>
             <h3>Useful Links</h3>
@@ -220,13 +243,37 @@ function App() {
             </ul>
           </section>
           <section>
-            <h3>Resources</h3>
-            <ul>
-              <li>Video Gallery</li>
-              <li>Blogs</li>
-              <li>FAQs</li>
-              <li>Webinars</li>
+            <h3>Contact Details</h3>
+            <ul className="contact-list">
+              <li>
+                <span className="contact-icon" aria-hidden="true">
+                  ✉
+                </span>
+                Email: support@caremetrix.com.au
+              </li>
+              <li>
+                <span className="contact-icon" aria-hidden="true">
+                  ☎
+                </span>
+                Phone: +91 8997865432
+              </li>
+              <li>
+                <span className="contact-icon" aria-hidden="true">
+                  📍
+                </span>
+                18 Innovation Drive, Melbourne VIC
+              </li>
             </ul>
+            <a
+              className="footer-map"
+              href="https://maps.google.com/?q=Melbourne%20VIC"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open CareMetrix location in Google Maps"
+            >
+              <span aria-hidden="true">🗺</span>
+              View on Map
+            </a>
           </section>
         </div>
         <div className="footer-bottom">
