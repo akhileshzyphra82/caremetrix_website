@@ -84,47 +84,40 @@ function App() {
       <main>
         <section className="hero">
           <div className="container hero-grid">
-            <div>
-              <p className="eyebrow">Purpose-built for NDIS providers</p>
-              <h1 className="gradient-heading">Beautifully simple operations platform for high-quality disability support.</h1>
-              <p className="lead">
-                From participant onboarding to compliance, workforce, and reporting, CareMetrix brings every workflow
-                into one modern platform designed for NDIS growth.
-              </p>
-              <div className="cta-row">
-                <a className="btn btn-primary" href="#contact">
-                  Book a Demo
-                </a>
-                <a className="btn btn-soft" href="#solutions">
-                  Explore Platform
-                </a>
-              </div>
-              <div className="stats-row" id="why">
-                {platformStats.map((stat) => (
-                  <div key={stat.label} className="stat-card">
-                    <strong>{stat.value}</strong>
-                    <span>{stat.label}</span>
-                  </div>
-                ))}
-              </div>
+            <p className="eyebrow">Purpose-built for NDIS providers</p>
+            <h1 className="gradient-heading">Beautifully simple operations platform for high-quality disability support.</h1>
+
+            <div className="hero-highlight-line" aria-label="CareMetrix key strengths">
+              {heroHighlights.map((item) => (
+                <p key={item.title}>
+                  <span aria-hidden="true">{item.icon}</span>
+                  {item.title}
+                </p>
+              ))}
             </div>
 
-            <aside className="hero-panel">
-              <h2>Why teams are switching to CareMetrix</h2>
-              <div className="highlight-list">
-                {heroHighlights.map((item) => (
-                  <article key={item.title} className="highlight-item">
-                    <span className="icon" aria-hidden="true">
-                      {item.icon}
-                    </span>
-                    <div>
-                      <h3>{item.title}</h3>
-                      <p>{item.text}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </aside>
+            <p className="lead">
+              From participant onboarding to compliance, workforce, and reporting, CareMetrix brings every workflow
+              into one modern platform designed for NDIS growth.
+            </p>
+
+            <div className="cta-row">
+              <a className="btn btn-primary" href="#contact">
+                Book a Demo
+              </a>
+              <a className="btn btn-soft" href="#solutions">
+                Explore Platform
+              </a>
+            </div>
+
+            <div className="stats-row" id="why">
+              {platformStats.map((stat) => (
+                <div key={stat.label} className="stat-card">
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
