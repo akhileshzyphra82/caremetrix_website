@@ -52,25 +52,13 @@ function App() {
   return (
     <div className="page-shell">
       <header className="site-header" id="top">
-        <div className="container nav-wrap">
+        <div className="container nav-wrap nav-logo-only">
           <a href="#top" className="brand" aria-label="CareMetrix home">
             <img
               src="https://pub-c61fbd9fa813427186a41ed133f48034.r2.dev/asset/website-banner/bg-logo.png"
               alt="CareMetrix logo"
               className="brand-logo"
             />
-            <span>CareMetrix</span>
-          </a>
-
-          <nav className="nav-links" aria-label="Main">
-            <a href="#solutions">Solutions</a>
-            <a href="#ndis">NDIS Sectors</a>
-            <a href="#why">Why CareMetrix</a>
-            <a href="#contact">Contact</a>
-          </nav>
-
-          <a className="btn btn-login" href="https://dev.caremetrix.com.au" target="_blank" rel="noreferrer">
-            Login
           </a>
         </div>
       </header>
@@ -80,7 +68,7 @@ function App() {
           <div className="container hero-grid">
             <div>
               <p className="eyebrow">Purpose-built for NDIS providers</p>
-              <h1>Beautifully simple operations platform for high-quality disability support.</h1>
+              <h1 className="gradient-heading">Beautifully simple operations platform for high-quality disability support.</h1>
               <p className="lead">
                 From participant onboarding to compliance, workforce, and reporting, CareMetrix brings every workflow
                 into one modern platform designed for NDIS growth.
