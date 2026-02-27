@@ -249,19 +249,19 @@ function App() {
                 <span className="contact-icon" aria-hidden="true">
                   ☎
                 </span>
-                Phone: +91 8997865432
+                Phone: +61 456 790 271
               </li>
               <li>
                 <span className="contact-icon" aria-hidden="true">
                   📍
                 </span>
-                18 Innovation Drive, Melbourne VIC
+                Infopark Road, Opposite Prestige Hillside Gateway, Kusumagiri, Kakkanad, Kochi.
               </li>
             </ul>
             <iframe
               className="footer-map"
               title="CareMetrix office location map"
-              src="https://maps.google.com/maps?q=18%20Innovation%20Drive%2C%20Melbourne%20VIC&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Infopark%20Road%2C%20Opposite%20Prestige%20Hillside%20Gateway%2C%20Kusumagiri%2C%20Kakkanad%2C%20Kochi&t=&z=13&ie=UTF8&iwloc=&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

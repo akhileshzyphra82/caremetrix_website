@@ -248,6 +248,7 @@ h1 {
   border: 2px solid var(--color-accent-strong);
   box-shadow: 0 14px 30px rgb(96 69 171 / 35%), 0 0 0 4px rgb(255 255 255 / 72%);
   z-index: 80;
+  animation: whatsappBlink 1.15s ease-in-out infinite;
 }
 
 .floating-whatsapp:hover {
@@ -259,6 +260,18 @@ h1 {
   width: 1.8rem;
   height: 1.8rem;
   fill: #fff;
+}
+
+@keyframes whatsappBlink {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 14px 30px rgb(96 69 171 / 35%), 0 0 0 4px rgb(255 255 255 / 72%);
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 16px 34px rgb(96 69 171 / 48%), 0 0 0 10px rgb(37 211 102 / 20%);
+  }
 }
 
 @keyframes heroCardFloat {
@@ -470,7 +483,7 @@ h2 {
 
 .footer-map {
   margin-top: 0.8rem;
-  width: min(100%, 220px);
+  width: min(100%, 320px);
   height: 130px;
   border: 0;
   border: 1px solid var(--color-border-soft);
