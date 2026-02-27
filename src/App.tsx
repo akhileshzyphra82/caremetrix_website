@@ -1,3 +1,5 @@
+import React from 'react';
+
 const navLinks = [
   { label: 'Home', href: '#top' },
   { label: 'Features', href: '#features' },
@@ -30,15 +32,71 @@ const reviews = [
   },
 ];
 
-const moduleTabs = [
-  'Dashboard',
-  'Rostering',
-  'Risk Management',
-  'HRM',
-  'Participants',
-  'Form Management',
-  'Document Management',
-  'Support Coordination',
+
+type ModuleTab = {
+  name: string;
+  image: string;
+  description: string;
+  features: string[];
+};
+
+const moduleTabContent: ModuleTab[] = [
+  {
+    name: 'Dashboard',
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
+    description: 'Get a complete operational snapshot with live NDIS metrics, pending tasks, and service health.',
+    features: ['Real-time KPI cards for participants, staff, and compliance', 'Smart notifications for urgent actions and upcoming deadlines', 'Custom widgets for finance, incidents, and team performance'],
+  },
+  {
+    name: 'Rostering',
+    image:
+      'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1400&q=80',
+    description: 'Build accurate, conflict-free rosters in minutes with shift visibility and auto-assignment support.',
+    features: ['Drag-and-drop schedule planner with worker availability', 'Shift clash alerts and travel-time awareness', 'Instant publish and worker confirmation tracking'],
+  },
+  {
+    name: 'Risk Management',
+    image:
+      'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80',
+    description: 'Proactively identify, monitor, and resolve risks with structured registers and clear escalation paths.',
+    features: ['Risk scoring matrix and mitigation action plans', 'Incident linking with corrective and preventive controls', 'Audit-ready logs for regulatory reporting'],
+  },
+  {
+    name: 'HRM',
+    image:
+      'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80',
+    description: 'Manage workforce lifecycle, credentials, and performance in one secure HR workspace.',
+    features: ['Employee onboarding and mandatory document checks', 'Credential expiry reminders and compliance tracking', 'Performance notes, training records, and appraisal history'],
+  },
+  {
+    name: 'Participants',
+    image:
+      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80',
+    description: 'Keep participant care plans, progress notes, and communication history connected and easy to access.',
+    features: ['Centralized profiles with goals, supports, and preferences', 'Daily notes and service timeline with quick filters', 'Family and stakeholder communication visibility'],
+  },
+  {
+    name: 'Form Management',
+    image:
+      'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80',
+    description: 'Create and manage digital forms that standardize workflows and remove manual paperwork.',
+    features: ['Reusable smart templates with conditional fields', 'E-signature support and instant form validation', 'Submission status tracking with approval flows'],
+  },
+  {
+    name: 'Document Management',
+    image:
+      'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80',
+    description: 'Store, organize, and retrieve important NDIS documents with full version and permission control.',
+    features: ['Role-based access for sensitive participant files', 'Version history and document expiry reminders', 'Fast search with tags, filters, and categories'],
+  },
+  {
+    name: 'Support Coordination',
+    image:
+      'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80',
+    description: 'Coordinate supports efficiently with actionable plans, provider collaboration, and measurable outcomes.',
+    features: ['Participant goal tracking and scheduled review notes', 'Provider coordination timeline with key interactions', 'Outcome-based reporting for transparent progress updates'],
+  },
 ];
 
 const featureSections = [
@@ -70,6 +128,8 @@ const featureSections = [
 ];
 
 function App() {
+  const [activeTab, setActiveTab] = React.useState(moduleTabContent[0]);
+
   return (
     <div className="page-shell" id="top">
       <header className="site-header">
@@ -153,13 +213,34 @@ function App() {
         <section className="modules" id="pricing">
           <div className="container">
             <h2>Smart Solutions For All Your NDIS Needs</h2>
-            <div className="module-grid">
-              {moduleTabs.map((tab, index) => (
-                <article key={tab} className={index === 0 ? 'module active' : 'module'}>
-                  {tab}
-                </article>
+            <div className="module-grid" role="tablist" aria-label="CareMetrix feature modules">
+              {moduleTabContent.map((tab) => (
+                <button
+                  key={tab.name}
+                  role="tab"
+                  aria-selected={activeTab.name === tab.name}
+                  className={activeTab.name === tab.name ? 'module active' : 'module'}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab.name}
+                </button>
               ))}
             </div>
+
+            <article className="module-panel" role="tabpanel" aria-label={`${activeTab.name} overview`}>
+              <figure className="dashboard-shell module-preview">
+                <img src={activeTab.image} alt={`${activeTab.name} module preview`} />
+              </figure>
+              <div className="module-copy">
+                <h3>{activeTab.name}</h3>
+                <p>{activeTab.description}</p>
+                <ul className="feature-list">
+                  {activeTab.features.map((feature: string) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
           </div>
         </section>
 
