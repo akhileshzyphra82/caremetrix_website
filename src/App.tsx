@@ -206,8 +206,13 @@ function App() {
           <section>
             <h3>About CareMetrix</h3>
             <p>
-              CareMetrix is an all-in-one platform for NDIS providers. From onboarding to compliance, rostering to CRM,
-              manage everything in one modern system.
+              CareMetrix is an all-in-one CRM and workforce management platform built exclusively for NDIS organisations.
+
+              We understand the challenges providers face — multiple subscriptions, disconnected systems, compliance pressure, staffing complexity, and increasing administrative workload.
+
+              CareMetrix simplifies everything.
+
+              Our fully automated platform brings staffing, participant management, compliance, reporting, and quality assurance together into one powerful system — designed specifically for NDIS providers.
             </p>
             <div className="social-links" aria-label="Social media links">
               <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
