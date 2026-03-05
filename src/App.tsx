@@ -2,10 +2,11 @@ import React from 'react';
 
 const navLinks = [
   { label: 'Home', href: '#top' },
-  { label: 'Features', href: '#features' },
-  { label: 'Benefits', href: '#benefits' },
-  { label: 'Resources', href: '#resources' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Reviews', href: '#reviews' },
+  { label: 'Solutions', href: '#solutions' },
+  { label: 'Why CareMetrix', href: '#features' },
+  { label: 'Our Mission', href: '#benefits' },
+  { label: 'Enquiry', href: '#resources' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -31,7 +32,6 @@ const reviews = [
     text: 'A game changer for participant and HR management. Everything is organised and available when we need it.',
   },
 ];
-
 
 type ModuleTab = {
   name: string;
@@ -126,23 +126,35 @@ const featureSections = [
       'We believe providers should spend more time supporting participants — and less time managing paperwork.',
     tagline: 'Get Started with CareMetrix',
     followUp:
-      'Ready to transform your organisation? Book a free consultation and discover how CareMetrix can reduce admin workload, improve compliance, and elevate the quality of care you deliver.',
+      'Ready to transform your organization? Book your personalised demo today and discover how CareMetrix can reduce admin workload, improve compliance, and elevate the quality of care you deliver.',
     image:
       'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
-  },
-  {
-    id: 'resources',
-    title: 'Platinum Benefits',
-    description:
-      'Get practical tools for NDIS-ready operations, standardised processes, and complete visibility across your service delivery.',
-    bullets: ['Advice and standard employment workflows', 'Plan management guidance and reporting templates'],
-    image:
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
   },
 ];
 
 function App() {
   const [activeTab, setActiveTab] = React.useState(moduleTabContent[0]);
+  const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!isDemoModalOpen) {
+      return undefined;
+    }
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsDemoModalOpen(false);
+      }
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [isDemoModalOpen]);
 
   return (
     <div className="page-shell" id="top">
@@ -165,9 +177,9 @@ function App() {
           </nav>
 
           <div className="nav-ctas">
-            <a className="btn btn-primary" href="#contact">
+            <button className="btn btn-primary" type="button" onClick={() => setIsDemoModalOpen(true)}>
               Book a Demo
-            </a>
+            </button>
             <a className="btn btn-secondary" href="https://dev.caremetrix.com.au" target="_blank" rel="noreferrer">
               Sign in
             </a>
@@ -199,17 +211,18 @@ function App() {
 
         <a
           className="floating-whatsapp"
-          href="https://wa.me/?text=Hi%20CareMetrix%2C%20I%20would%20like%20to%20know%20more."
+          href="https://wa.me/61456790271?text=Hi%20CareMetrix%2C%20I%20would%20like%20to%20book%20a%20demo."
           target="_blank"
           rel="noreferrer"
-          aria-label="Chat with CareMetrix on WhatsApp"
+          aria-label="Chat instantly with CareMetrix on WhatsApp"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M19.05 4.94A9.86 9.86 0 0 0 12.02 2c-5.47 0-9.93 4.45-9.93 9.92 0 1.74.46 3.45 1.32 4.95L2 22l5.3-1.37a9.86 9.86 0 0 0 4.72 1.2h.01c5.47 0 9.93-4.45 9.93-9.93a9.82 9.82 0 0 0-2.9-6.96Zm-7.03 15.2h-.01a8.18 8.18 0 0 1-4.16-1.13l-.3-.18-3.14.8.84-3.06-.2-.31a8.2 8.2 0 0 1-1.26-4.34c0-4.52 3.68-8.2 8.22-8.2a8.13 8.13 0 0 1 5.82 2.42 8.15 8.15 0 0 1 2.4 5.8c0 4.53-3.69 8.2-8.22 8.2Zm4.5-6.15c-.25-.13-1.47-.72-1.7-.8-.23-.08-.39-.12-.55.13-.16.24-.63.8-.77.96-.14.16-.28.18-.53.06-.24-.13-1.03-.38-1.96-1.2a7.34 7.34 0 0 1-1.35-1.68c-.14-.25-.02-.39.1-.52.12-.12.25-.3.37-.45.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.13-.55-1.33-.75-1.83-.2-.47-.4-.4-.55-.4h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.11 3.64 2.41 1.04 2.41.7 2.84.66.43-.04 1.37-.56 1.56-1.1.2-.54.2-1 .14-1.1-.06-.1-.22-.16-.47-.29Z" />
           </svg>
+          <span>Chat Instantly</span>
         </a>
 
-        <section className="reviews">
+        <section className="reviews" id="reviews">
           <div className="container">
             <h2>Customer Reviews</h2>
             <div className="review-grid">
@@ -225,7 +238,7 @@ function App() {
           </div>
         </section>
 
-        <section className="modules" id="pricing">
+        <section className="modules" id="solutions">
           <div className="container">
             <h2>Smart Solutions For All Your NDIS Needs</h2>
             <div className="module-grid" role="tablist" aria-label="CareMetrix feature modules">
@@ -275,14 +288,75 @@ function App() {
                 {section.summary && <p className="feature-summary">{section.summary}</p>}
                 {section.tagline && <p className="feature-tagline">{section.tagline}</p>}
                 {section.followUp && <p>{section.followUp}</p>}
-                <a className="btn btn-primary" href="#contact">
+                <button className="btn btn-primary" type="button" onClick={() => setIsDemoModalOpen(true)}>
                   Book a Demo
-                </a>
+                </button>
               </div>
               <img src={section.image} alt={section.title} />
             </div>
           </section>
         ))}
+
+        <section className="contact-enquiry" id="resources">
+          <div className="container enquiry-grid">
+            <aside className="contact-card">
+              <p className="contact-kicker">Connect With CareMetrix</p>
+              <h2>Contact Details</h2>
+              <p>Our team is ready to help you choose the right setup for your NDIS operations.</p>
+              <ul className="contact-list contact-list-large">
+                <li><span className="contact-icon">✉</span> support@caremetrix.com.au</li>
+                <li><span className="contact-icon">☎</span> +61 456 790 271</li>
+                <li><span className="contact-icon">📍</span> Infopark Road, Opposite Prestige Hillside Gateway, Kusumagiri, Kakkanad, Kochi.</li>
+              </ul>
+              <a className="instant-whatsapp" href="https://wa.me/61456790271?text=Hi%20CareMetrix%2C%20I%20need%20support%20with%20an%20enquiry." target="_blank" rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.94A9.86 9.86 0 0 0 12.02 2c-5.47 0-9.93 4.45-9.93 9.92 0 1.74.46 3.45 1.32 4.95L2 22l5.3-1.37a9.86 9.86 0 0 0 4.72 1.2h.01c5.47 0 9.93-4.45 9.93-9.93a9.82 9.82 0 0 0-2.9-6.96Zm-7.03 15.2h-.01a8.18 8.18 0 0 1-4.16-1.13l-.3-.18-3.14.8.84-3.06-.2-.31a8.2 8.2 0 0 1-1.26-4.34c0-4.52 3.68-8.2 8.22-8.2a8.13 8.13 0 0 1 5.82 2.42 8.15 8.15 0 0 1 2.4 5.8c0 4.53-3.69 8.2-8.22 8.2Z"/></svg>
+                <div>
+                  <strong>Chat Instantly on WhatsApp</strong>
+                  <span>Get a quick response from our team.</span>
+                </div>
+              </a>
+              <div className="social-links" aria-label="Social media links">
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 8.5V6.7c0-.76.5-.94.85-.94h2.1V2.5l-2.9-.01C10.5 2.49 9 4.4 9 7.2v1.3H6.5V12H9v9.5h4.5V12h2.9l.4-3.5h-3.3Z" /></svg>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm-.2 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm10.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" /></svg>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 8.7H2.8V21h3.4V8.7ZM4.5 3A2 2 0 1 0 4.6 7 2 2 0 0 0 4.5 3Zm16.7 10.6c0-3.2-1.7-5.3-4.8-5.3-2.2 0-3.2 1.2-3.8 2v-1.7H9.2V21h3.4v-6.1c0-1.6.3-3.2 2.3-3.2 2 0 2 1.9 2 3.3V21H21v-7.4Z" /></svg>
+                </a>
+              </div>
+            </aside>
+
+            <div className="enquiry-form-card">
+              <h2>Send Us Your Enquiry</h2>
+              <p>Share your requirements and we will get back to you with a tailored demo and implementation guidance.</p>
+              <form className="enquiry-form">
+                <label>
+                  Full Name*
+                  <input type="text" name="name" required placeholder="Enter your full name" />
+                </label>
+                <label>
+                  Work Email*
+                  <input type="email" name="email" required placeholder="name@company.com" />
+                </label>
+                <label>
+                  Contact Number*
+                  <input type="tel" name="phone" required placeholder="+61" />
+                </label>
+                <label>
+                  Organisation Name*
+                  <input type="text" name="organisation" required placeholder="Your organisation" />
+                </label>
+                <label>
+                  Enquiry Details*
+                  <textarea name="message" required rows={4} placeholder="Tell us what you need help with" />
+                </label>
+                <button className="btn btn-primary" type="submit">Submit Enquiry</button>
+              </form>
+            </div>
+          </div>
+        </section>
 
         <section className="app-strip" id="contact">
           <div className="container app-strip-content">
@@ -313,31 +387,15 @@ function App() {
 
               Our fully automated platform brings staffing, participant management, compliance, reporting, and quality assurance together into one powerful system — designed specifically for NDIS providers.
             </p>
-            <div className="social-links" aria-label="Social media links">
-              <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M13.5 8.5V6.7c0-.76.5-.94.85-.94h2.1V2.5l-2.9-.01C10.5 2.49 9 4.4 9 7.2v1.3H6.5V12H9v9.5h4.5V12h2.9l.4-3.5h-3.3Z" />
-                </svg>
-              </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm-.2 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm10.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
-                </svg>
-              </a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M6.2 8.7H2.8V21h3.4V8.7ZM4.5 3A2 2 0 1 0 4.6 7 2 2 0 0 0 4.5 3Zm16.7 10.6c0-3.2-1.7-5.3-4.8-5.3-2.2 0-3.2 1.2-3.8 2v-1.7H9.2V21h3.4v-6.1c0-1.6.3-3.2 2.3-3.2 2 0 2 1.9 2 3.3V21H21v-7.4Z" />
-                </svg>
-              </a>
-            </div>
           </section>
           <section>
             <h3>Useful Links</h3>
             <ul>
-              <li>Invoicing</li>
-              <li>Rostering</li>
-              <li>NDIS Compliance</li>
-              <li>Risk Management</li>
+              {navLinks.map((link) => (
+                <li key={`footer-${link.href}`}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
             </ul>
           </section>
           <section>
@@ -381,6 +439,35 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {isDemoModalOpen && (
+        <div className="demo-modal-backdrop" role="presentation" onClick={() => setIsDemoModalOpen(false)}>
+          <div className="demo-modal" role="dialog" aria-modal="true" aria-label="Book a demo" onClick={(event: { stopPropagation: () => void }) => event.stopPropagation()}>
+            <button className="modal-close" type="button" aria-label="Close" onClick={() => setIsDemoModalOpen(false)}>
+              ×
+            </button>
+            <p className="contact-kicker">Book Your Demo</p>
+            <h2>Choose the Fastest Way to Connect</h2>
+            <p>Select the option that suits your preference and our team will guide you through the next steps.</p>
+            <div className="demo-options">
+              <a className="demo-option" href="#resources" onClick={() => setIsDemoModalOpen(false)}>
+                <span className="demo-icon" aria-hidden="true">📝</span>
+                <div>
+                  <h3>Share your requirements through our enquiry form</h3>
+                  <p>Provide your details so we can arrange a tailored product walkthrough.</p>
+                </div>
+              </a>
+              <a className="demo-option" href="https://wa.me/61456790271?text=Hi%20CareMetrix%2C%20I%20want%20to%20book%20a%20demo%20instantly." target="_blank" rel="noreferrer">
+                <span className="demo-icon demo-icon-whatsapp" aria-hidden="true">💬</span>
+                <div>
+                  <h3>Book instantly on WhatsApp</h3>
+                  <p>Start a live chat for immediate assistance and scheduling.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
