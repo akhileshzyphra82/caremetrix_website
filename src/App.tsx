@@ -326,6 +326,11 @@ function App() {
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 8.7H2.8V21h3.4V8.7ZM4.5 3A2 2 0 1 0 4.6 7 2 2 0 0 0 4.5 3Zm16.7 10.6c0-3.2-1.7-5.3-4.8-5.3-2.2 0-3.2 1.2-3.8 2v-1.7H9.2V21h3.4v-6.1c0-1.6.3-3.2 2.3-3.2 2 0 2 1.9 2 3.3V21H21v-7.4Z" /></svg>
                 </a>
               </div>
+              <div className="contact-extra">
+                <h3>Support Hours</h3>
+                <p>Monday to Saturday: 8:30 AM to 7:00 PM AEST</p>
+                <p>Need urgent assistance? Reach out on WhatsApp and our onboarding team will guide you right away.</p>
+              </div>
             </aside>
 
             <div className="enquiry-form-card">
@@ -364,9 +369,15 @@ function App() {
             <p>Download the CareMetrix worker app from the App Store or Google Play.</p>
             <div className="app-buttons">
               <a className="btn btn-dark" href="#top">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m3.4 2.1 10.65 10.67L3.4 23.4c-.4-.23-.65-.66-.65-1.13V3.23c0-.47.25-.9.65-1.13Zm11.5 11.53 2.97 2.98-11.66 6.76 8.69-9.74Zm4.66-.88 2.95 1.71c.65.38.65 1.33 0 1.7l-3.79 2.2-3.17-3.17 4.01-2.44ZM6.21.72l11.67 6.77-2.98 2.99L6.2.72Z" />
+                </svg>
                 Get on Play Store
               </a>
               <a className="btn btn-dark" href="#top">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17.7 12.7c-.03-2.6 2.13-3.84 2.23-3.9-1.22-1.78-3.1-2.03-3.77-2.06-1.61-.16-3.14.95-3.95.95s-2.06-.93-3.39-.9c-1.74.02-3.35 1.01-4.25 2.58-1.82 3.15-.47 7.81 1.3 10.37.86 1.25 1.9 2.65 3.24 2.6 1.3-.05 1.79-.84 3.36-.84s2.02.84 3.39.82c1.4-.02 2.29-1.27 3.15-2.52.99-1.45 1.4-2.86 1.42-2.93-.03-.01-2.73-1.05-2.76-4.17ZM14.87 4.88c.72-.87 1.2-2.09 1.07-3.3-1.03.04-2.28.69-3.02 1.56-.67.78-1.25 2.01-1.1 3.19 1.15.09 2.33-.58 3.05-1.45Z" />
+                </svg>
                 Get on App Store
               </a>
             </div>
