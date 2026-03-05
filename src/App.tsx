@@ -119,9 +119,14 @@ const featureSections = [
   },
   {
     id: 'benefits',
-    title: 'Support Coordination',
+    title: 'Our Mission',
     description:
-      'Manage participant journeys, notes, incidents, and action plans with a single workflow that is simple for every staff member.',
+      'At CareMetrix, our mission is to empower NDIS providers with technology that improves operational efficiency while upholding the highest standards of participant care.',
+    summary:
+      'We believe providers should spend more time supporting participants — and less time managing paperwork.',
+    tagline: 'Get Started with CareMetrix',
+    followUp:
+      'Ready to transform your organisation? Book a free consultation and discover how CareMetrix can reduce admin workload, improve compliance, and elevate the quality of care you deliver.',
     image:
       'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
   },
@@ -269,8 +274,9 @@ function App() {
                 )}
                 {section.summary && <p className="feature-summary">{section.summary}</p>}
                 {section.tagline && <p className="feature-tagline">{section.tagline}</p>}
+                {section.followUp && <p>{section.followUp}</p>}
                 <a className="btn btn-primary" href="#contact">
-                  7 Day Free Trial
+                  Book a Demo
                 </a>
               </div>
               <img src={section.image} alt={section.title} />
