@@ -102,9 +102,18 @@ const moduleTabContent: ModuleTab[] = [
 const featureSections = [
   {
     id: 'features',
-    title: 'Sorted and Structured Dashboard',
+    title: 'Why CareMetrix?',
     description:
-      'CareMetrix keeps everything in one place so your team can track participants, workforce activity, and compliance instantly.',
+      'NDIS organisations often rely on multiple software platforms to manage operations. This leads to:',
+    bullets: [
+      'High subscription costs',
+      'Duplicate data entry',
+      'Increased admin hours',
+      'Compliance risks',
+      'Fragmented communication',
+    ],
+    summary: 'CareMetrix replaces multiple systems with one complete solution.',
+    tagline: 'One platform. One login. Total control.',
     image:
       'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
   },
@@ -252,12 +261,14 @@ function App() {
                 <h2>{section.title}</h2>
                 <p>{section.description}</p>
                 {section.bullets && (
-                  <ul className="feature-list">
+                  <ul className={`feature-list ${section.id === 'features' ? 'feature-list-check' : ''}`}>
                     {section.bullets.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
                 )}
+                {section.summary && <p className="feature-summary">{section.summary}</p>}
+                {section.tagline && <p className="feature-tagline">{section.tagline}</p>}
                 <a className="btn btn-primary" href="#contact">
                   7 Day Free Trial
                 </a>
