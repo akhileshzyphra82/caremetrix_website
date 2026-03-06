@@ -313,11 +313,10 @@ h2 {
   margin-bottom: 1.4rem;
 }
 
-.reviews h2,
+
 .modules h2,
 .feature h2,
 .contact-enquiry h2,
-.app-strip h2,
 .footer h3,
 .contact-extra h3 {
   background: var(--gradient-primary);
