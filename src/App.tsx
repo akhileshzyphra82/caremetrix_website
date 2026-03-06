@@ -305,10 +305,10 @@ function App() {
               <p>Our team is ready to help you choose the right setup for your NDIS operations.</p>
               <ul className="contact-list contact-list-large">
                 <li><span className="contact-icon">✉</span> support@caremetrix.com.au</li>
-                <li><span className="contact-icon">☎</span> +61 456 790 271</li>
-                <li><span className="contact-icon">📍</span> Infopark Road, Opposite Prestige Hillside Gateway, Kusumagiri, Kakkanad, Kochi.</li>
+                <li><span className="contact-icon">☎</span> 0061435353845</li>
+                <li><span className="contact-icon">📍</span> Unit 7 5 Donaldson street Wyong NSW 2259</li>
               </ul>
-              <a className="instant-whatsapp" href="https://wa.me/61456790271?text=Hi%20CareMetrix%2C%20I%20need%20support%20with%20an%20enquiry." target="_blank" rel="noreferrer">
+              <a className="instant-whatsapp" href="https://wa.me/61435353845?text=Hi%20CareMetrix%2C%20I%20need%20support%20with%20an%20enquiry." target="_blank" rel="noreferrer">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.94A9.86 9.86 0 0 0 12.02 2c-5.47 0-9.93 4.45-9.93 9.92 0 1.74.46 3.45 1.32 4.95L2 22l5.3-1.37a9.86 9.86 0 0 0 4.72 1.2h.01c5.47 0 9.93-4.45 9.93-9.93a9.82 9.82 0 0 0-2.9-6.96Zm-7.03 15.2h-.01a8.18 8.18 0 0 1-4.16-1.13l-.3-.18-3.14.8.84-3.06-.2-.31a8.2 8.2 0 0 1-1.26-4.34c0-4.52 3.68-8.2 8.22-8.2a8.13 8.13 0 0 1 5.82 2.42 8.15 8.15 0 0 1 2.4 5.8c0 4.53-3.69 8.2-8.22 8.2Z"/></svg>
                 <div>
                   <strong>Chat Instantly on WhatsApp</strong>
@@ -422,19 +422,19 @@ function App() {
                 <span className="contact-icon" aria-hidden="true">
                   ☎
                 </span>
-                Phone: +61 456 790 271
+                Phone: 0061435353845
               </li>
               <li>
                 <span className="contact-icon" aria-hidden="true">
                   📍
                 </span>
-                Infopark Road, Opposite Prestige Hillside Gateway, Kusumagiri, Kakkanad, Kochi.
+                Unit 7 5 Donaldson street Wyong NSW 2259
               </li>
             </ul>
             <iframe
               className="footer-map"
               title="CareMetrix office location map"
-              src="https://maps.google.com/maps?q=Infopark%20Road%2C%20Opposite%20Prestige%20Hillside%20Gateway%2C%20Kusumagiri%2C%20Kakkanad%2C%20Kochi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Unit%207%205%20Donaldson%20street%20Wyong%20NSW%202259&t=&z=13&ie=UTF8&iwloc=&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
